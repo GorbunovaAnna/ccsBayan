@@ -22,12 +22,8 @@
     display: flex;
     width: 100%;
     height: auto;
-    position: relative;
     border-bottom: 2px solid rgb(0, 119, 255);
     padding: 20px 0;
-    /* padding-left: 35px;
-    padding-right: 35px; */
-    /* margin-bottom: 12px; */
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -38,7 +34,7 @@
   
   /* Hide the browser's default radio button */
   .container input {
-    position: absolute;
+   
     opacity: 0;
     cursor: pointer;
     height: 0;
@@ -58,6 +54,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
   }
 
   .mem{
@@ -66,6 +63,7 @@
     height: 0;
     overflow: hidden;
     transition: height .3s linear;
+    margin: 0 auto;
   }
   .mem > img {
     width: 100%;
@@ -75,27 +73,20 @@
   }
   .cross{
     display: block;
-    font-weight: 900;
+    width: 24px;
     transform: rotate(0);
     transition: transform .3s linear;
   }
   
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .content > .mem {
-    /* background-color: #ccc; */
-    height: 200px;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .content {
-    /* background-color: #2196F3; */
-  }
+  .container:hover input ~ .content > .mem,
   .container input:checked ~ .content > .mem {
     height: 200px;
   }
+  .container:hover input ~ .content > .line > .cross,
   .container input:checked ~ .content > .line > .cross {
     transform: rotate(45deg);
   }
+  
 
   @media (min-width: 820px) {
     .cross {
